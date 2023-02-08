@@ -14,4 +14,6 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
+void	add_to_stack(t_stack **start, int value);
+void	print_stack(t_stack *start);
 #endif
