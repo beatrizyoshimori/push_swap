@@ -1,5 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/08 18:05:34 by byoshimo          #+#    #+#             */
+/*   Updated: 2023/02/09 21:15:45 by byoshimo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
+
+void    swap(t_stack **start)
+{
+    t_stack tmp;
+
+    tmp = *((*start)->next);
+    (*start)->next = (*start)->next->next;
+	tmp.next = (*start);
+    (*start) = &tmp;
+	(*start)->number = tmp.number;
+}
 
 void	print_stack(t_stack *start)
 {
@@ -39,6 +61,9 @@ int main(int argc, char *argv[])
         add_to_stack(&stack, ft_atoi(argv[i]));
         i++;
     }
+	print_stack(stack);
+	swap(&stack);
+	printf("start->number: %d\n", stack->number);
 	print_stack(stack);
     return (0);
 }
