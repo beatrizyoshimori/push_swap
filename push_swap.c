@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 18:05:34 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/02/09 21:15:45 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/02/10 21:54:03 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,8 @@ void    swap(t_stack **start)
 	(*start)->number = tmp.number;
 }
 
-void	print_stack(t_stack *start)
+void	print_stack(t_stack *stack)
 {
-	t_stack	*stack;
-
-	stack = start;
 	while (stack)
 	{
 		printf("%d\n", stack->number);
@@ -35,25 +32,24 @@ void	print_stack(t_stack *start)
 	}
 }
 
-void	add_to_stack(t_stack **start, int value)
+void	rotate(t_stack **start)
 {
-    t_stack *stack;
+	t_stack	tmp_first;
+	t_stack	tmp_last;
 
-    stack = (t_stack *)malloc(sizeof(t_stack));
-    stack->number = value;
-	stack->next = *start;
-	*start = stack;
+	tmp_first = **start;
+	tmp_first.next = NULL;
+	tmp_last = (*ft_stacklast(*start));
+	tmp_last.next = (*start)->next;
+	(*start) = &tmp_last;
+	*(ft_stacklast(*start)) = tmp_first;
 }
 
 int main(int argc, char *argv[])
 {
     int     i;
     t_stack *stack;
-    //t_stack *head;
 
-    //stack = malloc(sizeof(t_stack));
-    //stack->number = ft_atoi(argv[1]);
-    //head = stack;
 	stack = NULL;
     i = 1;
     while (i < argc)
@@ -62,8 +58,9 @@ int main(int argc, char *argv[])
         i++;
     }
 	print_stack(stack);
-	swap(&stack);
-	printf("start->number: %d\n", stack->number);
+	//swap(&stack);
+	rotate(&stack);
+	//printf("start->number: %d\n", stack->number);
 	print_stack(stack);
     return (0);
 }
