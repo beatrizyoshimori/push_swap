@@ -5,7 +5,8 @@ LIBFT = ./libft/libft.a
 
 SRCS = push_swap.c \
 	stack_utils.c \
-	sort.c
+	sort.c \
+	radix.c
 
 OBJS = $(SRCS:%.c=%.o)
 

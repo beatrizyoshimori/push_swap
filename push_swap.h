@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 18:05:40 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/02/10 21:24:53 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/03/04 17:17:47 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ void    swap(t_stack **start);
 void	rotate(t_stack **start);
 void	reverse_rotate(t_stack **start);
 void	push(t_stack **src, t_stack **dest);
+void    radix(t_stack *stack_a, t_stack *stack_b);
 
 #endif

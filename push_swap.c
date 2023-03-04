@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 18:05:34 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/02/10 21:54:03 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/03/04 17:19:48 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,18 @@ int main(int argc, char *argv[])
 	stack_b = NULL;
     i = 1;
     while (i < argc)
+	{
         add_to_stack(&stack_a, ft_atoi(argv[i++]));
+	}
 	print_stack(stack_a);
-	printf("\na:\n");
+	//printf("\na:\n");
 	// swap(&stack_a);
-	rotate(&stack_a);
+	//rotate(&stack_a);
 	// reverse_rotate(&stack_a);
 	//push(&stack_a, &stack_b);
+	radix(stack_a, stack_b);
 	print_stack(stack_a);
-	printf("\nb:\n");
-	print_stack(stack_b);
+	//printf("\nb:\n");
+	//print_stack(stack_b);
     return (0);
 }
