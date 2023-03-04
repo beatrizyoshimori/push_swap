@@ -4,7 +4,8 @@ LIBFT = ./libft/libft.a
 # BONUSLIB = ./bonus/libbonus.a
 
 SRCS = push_swap.c \
-	stack_utils.c
+	stack_utils.c \
+	sort.c
 
 OBJS = $(SRCS:%.c=%.o)
 

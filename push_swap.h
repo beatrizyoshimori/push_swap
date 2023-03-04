@@ -26,10 +26,13 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
-void	add_to_stack(t_stack **start, int value);
-void	print_stack(t_stack *start);
-t_stack	*ft_stacklast(t_stack *stack);
+t_stack	*ft_stack_last(t_stack *stack);
+t_stack	*ft_stack_second_last(t_stack *stack);
 void	ft_stackadd_back(t_stack **stack, t_stack *new);
 void	add_to_stack(t_stack **start, int value);
+void    swap(t_stack **start);
+void	rotate(t_stack **start);
+void	reverse_rotate(t_stack **start);
+void	push(t_stack **src, t_stack **dest);
 
 #endif

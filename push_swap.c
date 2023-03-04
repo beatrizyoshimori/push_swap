@@ -12,17 +12,6 @@
 
 #include "push_swap.h"
 
-void    swap(t_stack **start)
-{
-    t_stack tmp;
-
-    tmp = *((*start)->next);
-    (*start)->next = (*start)->next->next;
-	tmp.next = (*start);
-    (*start) = &tmp;
-	(*start)->number = tmp.number;
-}
-
 void	print_stack(t_stack *stack)
 {
 	while (stack)
@@ -32,35 +21,25 @@ void	print_stack(t_stack *stack)
 	}
 }
 
-void	rotate(t_stack **start)
-{
-	t_stack	tmp_first;
-	t_stack	tmp_last;
-
-	tmp_first = **start;
-	tmp_first.next = NULL;
-	tmp_last = (*ft_stacklast(*start));
-	tmp_last.next = (*start)->next;
-	(*start) = &tmp_last;
-	*(ft_stacklast(*start)) = tmp_first;
-}
-
 int main(int argc, char *argv[])
 {
     int     i;
-    t_stack *stack;
+    t_stack *stack_a;
+	t_stack	*stack_b;
 
-	stack = NULL;
+	stack_a = NULL;
+	stack_b = NULL;
     i = 1;
     while (i < argc)
-    {
-        add_to_stack(&stack, ft_atoi(argv[i]));
-        i++;
-    }
-	print_stack(stack);
-	//swap(&stack);
-	rotate(&stack);
-	//printf("start->number: %d\n", stack->number);
-	print_stack(stack);
+        add_to_stack(&stack_a, ft_atoi(argv[i++]));
+	print_stack(stack_a);
+	printf("\na:\n");
+	// swap(&stack_a);
+	rotate(&stack_a);
+	// reverse_rotate(&stack_a);
+	//push(&stack_a, &stack_b);
+	print_stack(stack_a);
+	printf("\nb:\n");
+	print_stack(stack_b);
     return (0);
 }
