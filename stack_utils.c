@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 21:22:15 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/02/10 21:24:49 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/03/11 16:46:22 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,26 @@ void	add_to_stack(t_stack **start, int value)
     ft_stackadd_back(start, new);
 }
 
-// void	free_stack(t_stack *stack)
-// {
-// 	while
-// }
+int	stack_size(t_stack *stack)
+{
+	int		i;
+
+	i = 0;
+	while (stack != NULL)
+	{
+		i++;
+		stack = stack->next;
+	}
+	return (i);
+}
+
+int	check_if_sorted(t_stack *stack)
+{
+	while (stack->next)
+	{
+		if (stack->number > stack->next->number)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
+}
