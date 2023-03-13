@@ -40,16 +40,6 @@ void	ft_stackadd_back(t_stack **stack, t_stack *new)
 	ft_stack_last(*stack)->next = new;
 }
 
-void	add_to_stack(t_stack **start, int value)
-{
-    t_stack *new;
-
-    new = (t_stack *)malloc(sizeof(t_stack));
-    new->number = value;
-    new->next = NULL;
-    ft_stackadd_back(start, new);
-}
-
 int	stack_size(t_stack *stack)
 {
 	int		i;
