@@ -43,5 +43,7 @@ int main(int argc, char *argv[])
 	// print_stack(stack_a);
 	//printf("\nb:\n");
 	//print_stack(stack_b);
+	clear_stack(&stack_a);
+	clear_stack(&stack_b);
 	return (0);
 }

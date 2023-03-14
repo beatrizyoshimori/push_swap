@@ -53,13 +53,14 @@ int	stack_size(t_stack *stack)
 	return (i);
 }
 
-int	check_if_sorted(t_stack *stack)
+void	clear_stack(t_stack **stack)
 {
-	while (stack->next)
+	t_stack	*aux;
+
+	while (*stack)
 	{
-		if (stack->number > stack->next->number)
-			return (0);
-		stack = stack->next;
+		aux = (*stack)->next;
+		free(*stack);
+		*stack = aux;
 	}
-	return (1);
 }

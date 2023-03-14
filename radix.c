@@ -12,21 +12,27 @@
 
 #include "push_swap.h"
 
-// int	get_max_bit(t_stack *stack)
-// {
-// 	int	max_index;
-// 	int	max_bit;
+int	get_max_bit(t_stack *stack)
+{
+	int	max_index;
+	int	max_bit;
 
-// 	max_index = stack->index;
-// 	stack = stack->next;
-// 	while (stack)
-// 	{
-// 		if (stack->index > max_index)
-// 			max_index = stack->index;
-// 		stack = stack->next;
-// 	}
-// 	return (max_bit);
-// }
+	max_index = stack->index;
+	stack = stack->next;
+	while (stack)
+	{
+		if (stack->index > max_index)
+			max_index = stack->index;
+		stack = stack->next;
+	}
+	max_bit = 0;
+	while ((max_index | 0) != 0)
+	{
+		max_bit++;
+		max_index = max_index >> 1;
+	}
+	return (max_bit);
+}
 
 void	sort_radix(t_stack **stack_a, t_stack **stack_b, int i)
 {
@@ -47,10 +53,12 @@ void	sort_radix(t_stack **stack_a, t_stack **stack_b, int i)
 
 void	radix(t_stack **stack_a, t_stack **stack_b)
 {
-	int i;
+	int	i;
+	int max_bit;
 
 	i = 0;
-	while (i < 8 && !check_if_sorted(*stack_a))
+	max_bit = get_max_bit(*stack_a);
+	while (i < max_bit && !check_if_sorted(*stack_a))
 	{
 		sort_radix(stack_a, stack_b, i);
 		i++;
