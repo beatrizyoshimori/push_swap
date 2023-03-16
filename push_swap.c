@@ -38,12 +38,14 @@ int main(int argc, char *argv[])
 		sort_two(&stack_a);
 	else if (argc == 4)
 		sort_three(&stack_a);
-	else
+	else if (argc >= 5 && argc <= 6)
+		sort_five(&stack_a, &stack_b);
+	else if (argc > 6)
 		radix(&stack_a, &stack_b);
-	// print_stack(stack_a);
+	//print_stack(stack_a);
 	//printf("\nb:\n");
 	//print_stack(stack_b);
 	clear_stack(&stack_a);
-	clear_stack(&stack_b);
+	//clear_stack(&stack_b);
 	return (0);
 }
