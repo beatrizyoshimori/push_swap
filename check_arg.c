@@ -4,7 +4,7 @@
 
 void	print_error()
 {
-	write(1, "Error\n", 6);
+	write(2, "Error\n", 6);
 	exit(1);
 }
 
@@ -58,7 +58,11 @@ void	check_arg(int argc, char *argv[])
 	{
 		j = -1;
 		if ((argv[i][0] == '-' || argv[i][0] == '+'))
+		{
+			if (!argv[i][1])
+				print_error();
 			j++;
+		}
 		while (argv[i][++j])
 			if (argv[i][j] < '0' || argv[i][j] > '9')
 				print_error();
