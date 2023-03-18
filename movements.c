@@ -1,10 +1,20 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   movements.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/17 18:30:28 by byoshimo          #+#    #+#             */
+/*   Updated: 2023/03/17 22:37:32 by byoshimo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
 
 void	swap(t_stack **start, char c)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	if (*start == NULL || (*start)->next == NULL)
 		return ;
@@ -16,8 +26,6 @@ void	swap(t_stack **start, char c)
 		write(1, "sa\n", 3);
 	if (c == 'b')
 		write(1, "sb\n", 3);
-	if (c == 's')
-		write(1, "ss\n", 3);
 }
 
 void	rotate(t_stack **start, char c)
@@ -34,8 +42,6 @@ void	rotate(t_stack **start, char c)
 		write(1, "ra\n", 3);
 	if (c == 'b')
 		write(1, "rb\n", 3);
-	if (c == 'r')
-		write(1, "rr\n", 3);
 }
 
 void	reverse_rotate(t_stack **start, char c)
@@ -52,8 +58,6 @@ void	reverse_rotate(t_stack **start, char c)
 		write(1, "rra\n", 4);
 	if (c == 'b')
 		write(1, "rrb\n", 4);
-	if (c == 'r')
-		write(1, "rrr\n", 4);
 }
 
 void	push(t_stack **src, t_stack **dest, char c)

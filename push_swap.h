@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 18:05:40 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/03/11 16:39:02 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/03/17 19:34:21 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdio.h>
-#include "libft/libft.h"
+# include "libft/libft.h"
 
 typedef struct s_stack
 {
@@ -34,6 +33,9 @@ void	swap(t_stack **start, char c);
 void	rotate(t_stack **start, char c);
 void	reverse_rotate(t_stack **start, char c);
 void	push(t_stack **src, t_stack **dest, char c);
+void	swap_both(t_stack **stack_a, t_stack **stack_b);
+void	rotate_both(t_stack **stack_a, t_stack **stack_b);
+void	reverse_rotate_both(t_stack **stack_a, t_stack **stack_b);
 void	radix(t_stack **stack_a, t_stack **stack_b);
 void	check_arg(int argc, char *argv[]);
 void	add_to_stack(t_stack **start, int value);

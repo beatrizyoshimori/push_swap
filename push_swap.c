@@ -6,25 +6,16 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 18:05:34 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/03/11 20:00:19 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/03/17 22:52:49 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_stack(t_stack *stack)
-{
-	while (stack)
-	{
-		printf("%d\n", stack->number);
-		stack = stack->next;
-	}
-}
-
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
 	int		i;
-	t_stack *stack_a;
+	t_stack	*stack_a;
 	t_stack	*stack_b;
 
 	stack_a = NULL;
@@ -42,10 +33,6 @@ int main(int argc, char *argv[])
 		sort_five(&stack_a, &stack_b);
 	else if (argc > 6)
 		radix(&stack_a, &stack_b);
-	//print_stack(stack_a);
-	//printf("\nb:\n");
-	//print_stack(stack_b);
 	clear_stack(&stack_a);
-	//clear_stack(&stack_b);
 	return (0);
 }

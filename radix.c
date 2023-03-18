@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 16:32:04 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/03/11 16:43:20 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/03/17 18:32:14 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	sort_radix(t_stack **stack_a, t_stack **stack_b, int i)
 void	radix(t_stack **stack_a, t_stack **stack_b)
 {
 	int	i;
-	int max_bit;
+	int	max_bit;
 
 	i = 0;
 	max_bit = get_max_bit(*stack_a);

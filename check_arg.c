@@ -1,8 +1,18 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_arg.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/17 18:30:36 by byoshimo          #+#    #+#             */
+/*   Updated: 2023/03/17 18:33:18 by byoshimo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_error()
+void	print_error(void)
 {
 	write(2, "Error\n", 6);
 	exit(1);
@@ -26,9 +36,9 @@ void	check_int_max_min(char *str)
 	if (digits > 10)
 		print_error();
 	else if (digits == 10)
-		if ((str[0] == '-' && str[10] > '8') ||
-			(str[0] == '+' && str[10] > '7') ||
-			(ft_isdigit(str[0]) && str[9] > '7'))
+		if ((str[0] == '-' && str[10] > '8')
+			|| (str[0] == '+' && str[10] > '7')
+			|| (ft_isdigit(str[0]) && str[9] > '7'))
 			print_error();
 }
 

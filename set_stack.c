@@ -1,21 +1,31 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   set_stack.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/17 18:30:57 by byoshimo          #+#    #+#             */
+/*   Updated: 2023/03/17 18:35:06 by byoshimo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
 
 void	add_to_stack(t_stack **start, int value)
 {
-    t_stack *new;
+	t_stack	*new;
 
-    new = (t_stack *)malloc(sizeof(t_stack));
-    new->number = value;
-    new->next = NULL;
-    ft_stackadd_back(start, new);
+	new = (t_stack *)malloc(sizeof(t_stack));
+	new->number = value;
+	new->next = NULL;
+	ft_stackadd_back(start, new);
 }
 
 void	get_index(t_stack *stack)
 {
 	t_stack	*beg_stack;
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	beg_stack = stack;
 	while (stack)
