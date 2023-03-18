@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 18:05:40 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/03/17 19:34:21 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/03/17 22:59:37 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,5 @@ int		check_if_sorted(t_stack *stack);
 void	sort_two(t_stack **stack);
 void	sort_three(t_stack **stack);
 void	sort_five(t_stack **stack_a, t_stack **stack_b);
-
-void	print_stack(t_stack *stack);
 
 #endif
