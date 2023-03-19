@@ -12,34 +12,34 @@
 
 #include "push_swap.h"
 
-void	print_error(void)
+static void	print_error(void)
 {
 	write(2, "Error\n", 6);
 	exit(1);
 }
 
-void	check_int_max_min(char *str)
+static long long	ft_atoll(const char *nptr)
 {
-	int	i;
-	int	digits;
+	int			sign;
+	long long	num;
 
-	i = 0;
-	digits = 0;
-	if (str[i] == '+' || str[i] == '-')
-		i++;
-	while (str[i])
+	sign = 1;
+	while ((*nptr >= 9 && *nptr <= 13) || *nptr == 32)
+		nptr++;
+	if (*nptr == '-')
 	{
-		if (ft_isdigit(str[i]))
-			digits++;
-		i++;
+		sign = -1;
+		nptr++;
 	}
-	if (digits > 10)
-		print_error();
-	else if (digits == 10)
-		if ((str[0] == '-' && str[10] > '8')
-			|| (str[0] == '+' && str[10] > '7')
-			|| (ft_isdigit(str[0]) && str[9] > '7'))
-			print_error();
+	else if (*nptr == '+')
+		nptr++;
+	num = 0;
+	while (ft_isdigit(*nptr) == 1)
+	{
+		num = num * 10 + (*nptr - 48);
+		nptr++;
+	}
+	return (num * sign);
 }
 
 static void	check_duplicate(int argc, char *argv[])
@@ -50,7 +50,6 @@ static void	check_duplicate(int argc, char *argv[])
 	i = 0;
 	while (++i < argc)
 	{
-		check_int_max_min(argv[i]);
 		j = i;
 		while (++j < argc)
 			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
@@ -60,12 +59,16 @@ static void	check_duplicate(int argc, char *argv[])
 
 void	check_arg(int argc, char *argv[])
 {
-	int	i;
-	int	j;
+	int			i;
+	int			j;
+	long long	num;
 
 	i = 0;
 	while (++i < argc)
 	{
+		num = ft_atoll(argv[i]);
+		if (num > 2147483647 || num < -2147483648)
+			print_error();
 		j = -1;
 		if ((argv[i][0] == '-' || argv[i][0] == '+'))
 		{

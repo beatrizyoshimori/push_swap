@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int	get_max_bit(t_stack *stack)
+static int	get_max_bit(t_stack *stack)
 {
 	int	max_index;
 	int	max_bit;
@@ -34,7 +34,7 @@ int	get_max_bit(t_stack *stack)
 	return (max_bit);
 }
 
-void	sort_radix(t_stack **stack_a, t_stack **stack_b, int i)
+static void	sort_radix(t_stack **stack_a, t_stack **stack_b, int i)
 {
 	int	size;
 

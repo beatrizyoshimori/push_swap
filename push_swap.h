@@ -43,6 +43,6 @@ void	get_index(t_stack *stack);
 int		check_if_sorted(t_stack *stack);
 void	sort_two(t_stack **stack);
 void	sort_three(t_stack **stack);
-void	sort_five(t_stack **stack_a, t_stack **stack_b);
+void	sort_four_and_five(t_stack **stack_a, t_stack **stack_b);
 
 #endif

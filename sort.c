@@ -39,7 +39,7 @@ void	sort_three(t_stack **stack)
 		swap(stack, 'a');
 }
 
-void	sort_five(t_stack **stack_a, t_stack **stack_b)
+void	sort_four_and_five(t_stack **stack_a, t_stack **stack_b)
 {
 	int	i;
 	int	size;
